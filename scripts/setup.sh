@@ -11,9 +11,9 @@ if ! command -v python3 >/dev/null 2>&1; then
   exit 1
 fi
 
-if [ ! -x "$venv/bin/python" ]; then
+if ! "$venv/bin/python" -m pip --version >/dev/null 2>&1; then
   echo "Creating virtual environment in $venv"
-  python3 -m venv "$venv" || {
+  python3 -m venv --clear "$venv" || {
     echo "error: could not create the virtual environment (on Debian/Ubuntu, install python3-venv)." >&2
     exit 1
   }
