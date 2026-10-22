@@ -25,6 +25,7 @@ cat <<MSG
 
 Setup complete. To preview the site:
 
+  cd "$repo"
   source venv/bin/activate
   zensical serve
 
